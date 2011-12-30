@@ -21,8 +21,10 @@ generator:
         zeitgeistid: {label: "Numéro", help: "Numéro du Zeitgeist. Correspond au nombre de semaines depuis l'ouverture du forum"}
       list: 
         title: Les Zeitgeists
-        display: [=zeitgeistid, datestart]
+        display: [=zeitgeistid, datestart, _has_image]
       filter:  ~
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: "Modifier le Zeitgeist #%%zeitgeistid%%"
+      new:
+        title: "Créer un Zeitgeist"
