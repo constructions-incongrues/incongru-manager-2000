@@ -1,0 +1,28 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           LUM_Zeitgeist
+    theme:                 twitter
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          lum_zeitgeist
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        datestart:   {label: "Date de début", help: "Jour débutant la période couverte par le numéro"}
+        dateend:     {label: "Date de fin", help: "Jour clôturant la période couverte par le numéro"}
+        image:       {label: "L'image de la semaine", help: "URL vers l'image de la semaine"}
+        description: {label: "Présentation du numéro", help: "Éventuel texte de présentation du numéro"}
+        zeitgeistid: {label: "Numéro", help: "Numéro du Zeitgeist. Correspond au nombre de semaines depuis l'ouverture du forum"}
+      list: 
+        title: Les Zeitgeists
+        display: [=zeitgeistid, datestart]
+      filter:  ~
+      form:    ~
+      edit:    ~
+      new:     ~

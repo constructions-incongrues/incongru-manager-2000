@@ -1,0 +1,10 @@
+# symfony var directories
+src/cache/*
+src/log/*
+
+# dist files
+src/config/databases.yml
+
+# symfony & doctrine base* files
+src/lib/*/doctrine/base/*
+src/lib/*/doctrine/*/base/*

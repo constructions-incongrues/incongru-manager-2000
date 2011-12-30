@@ -1,0 +1,16 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+all:
+  sf_twitter_bootstrap:
+
+    # General configuration
+    site:                   Administration Incongrue
+    top_link_to_fieldset:   true
+    default_image:          light-bulb.png
+    
+    # Menu items
+    items:
+      Zeitgeists:
+        url: lum_zeitgeist
+      

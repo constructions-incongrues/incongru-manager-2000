@@ -1,0 +1,17 @@
+lum_zeitgeist:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LUM_Zeitgeist
+    module:               zeitgeist
+    prefix_path:          /zeitgeist
+    column:               zeitgeistid
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: sfTwitterBootstrap, action: dashboard }
+

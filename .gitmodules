@@ -1,0 +1,9 @@
+[submodule "src/lib/vendor/symfony"]
+	path = src/lib/vendor/symfony
+	url = https://github.com/symfony/symfony1.git
+[submodule "opt/phpreprocessor"]
+	path = opt/phpreprocessor
+	url = git@github.com:ARAMISAUTO/phpreprocessor.git
+[submodule "src/plugins/sfTwitterBootstrapPlugin"]
+	path = src/plugins/sfTwitterBootstrapPlugin
+	url = https://github.com/real-chocopanda/sfTwitterBootstrapPlugin.git
