@@ -8,3 +8,6 @@ src/config/databases.yml
 # symfony & doctrine base* files
 src/lib/*/doctrine/base/*
 src/lib/*/doctrine/*/base/*
+
+# Integration reports directory (for compatibility with Jenkins-php)
+build
