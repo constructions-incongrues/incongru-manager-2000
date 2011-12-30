@@ -11,3 +11,6 @@ src/lib/*/doctrine/*/base/*
 
 # Integration reports directory (for compatibility with Jenkins-php)
 build
+
+# Profiles that should never be shared
+etc/prod
