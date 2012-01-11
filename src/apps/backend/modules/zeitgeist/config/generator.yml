@@ -13,18 +13,20 @@ generator:
 
     config:
       actions: ~
-      fields:  
-        datestart:   {label: "Date de début", help: "Jour débutant la période couverte par le numéro"}
+      fields:
         dateend:     {label: "Date de fin", help: "Jour clôturant la période couverte par le numéro"}
-        image:       {label: "L'image de la semaine", help: "URL vers l'image de la semaine"}
+        datestart:   {label: "Date de début", help: "Jour débutant la période couverte par le numéro"}
         description: {label: "Présentation du numéro", help: "Éventuel texte de présentation du numéro"}
+        image:       {label: "L'image de la semaine", help: "URL vers l'image de la semaine"}
+        ispublished: {label: "Publié ?", help: "Définis si le numéro est visible en ligne"}
         zeitgeistid: {label: "Numéro", help: "Numéro du Zeitgeist. Correspond au nombre de semaines depuis l'ouverture du forum"}
-      list: 
+      list:
         title: Les Zeitgeists
-        display: [=zeitgeistid, datestart, _has_image]
+        display: [=zeitgeistid, datestart, dateend, ispublished]
       filter:  ~
       form:    ~
       edit:
         title: "Modifier le Zeitgeist #%%zeitgeistid%%"
       new:
         title: "Créer un Zeitgeist"
+
