@@ -40,6 +40,8 @@ all:
     # Secure application using sfGuard
     login_module:           sfGuardAuth
     login_action:           signin
-
     secure_module:          sfGuardAuth
     secure_action:          secure
+
+    # Set default culture
+    default_culture: fr_FR
