@@ -12,4 +12,83 @@
  */
 class LUM_Zeitgeist extends BaseLUM_Zeitgeist
 {
+	/**
+	 * Returns Zeitgeist's mixes.
+	 * 
+	 * @return array
+	 */
+	public function getMixes()
+	{
+		$q = Doctrine_Query::create()
+			->select('d.discussionid, d.name, r.labelname, r.downloadlink')
+			->from('LUM_Discussion d')
+			->innerJoin('d.LUM_Releases r')
+			->where('d.datecreated >= ?')
+			->andWhere('d.datecreated <= ?')
+			->andWhere('d.active = 1')
+			->andWhere('r.ismix = 1');
+		
+		$mixes = $q->execute(array($this->datestart, $this->dateend), Doctrine_Core::HYDRATE_ARRAY);
+		
+		return $mixes;
+	}
+	
+	/**
+	 * Returns Zeitgeist's releases.
+	 *
+	 * @return array
+	 */
+	public function getReleases()
+	{
+		$q = Doctrine_Query::create()
+		->select('d.discussionid, d.name, r.labelname, r.downloadlink')
+		->from('LUM_Discussion d')
+		->innerJoin('d.LUM_Releases r')
+		->where('d.datecreated >= ?')
+		->andWhere('d.datecreated <= ?')
+		->andWhere('d.active = 1')
+		->andWhere('r.ismix != 1');
+	
+		$releases = $q->execute(array($this->datestart, $this->dateend), Doctrine_Core::HYDRATE_ARRAY);
+	
+		return $releases;
+	}
+	
+	/**
+ 	 * Returns Zeitgeist's upcoming events.
+ 	 *
+  	 * @return array
+	 */
+	public function getNextWeekEvents()
+	{
+		$q = Doctrine_Query::create()
+		->select('d.discussionid, d.name, e.date, e.city, e.country')
+		->from('LUM_Discussion d')
+		->innerJoin('d.LUM_Event e')
+		->where('e.date >= ?')
+		->andWhere('e.date <= DATE_ADD(?, INTERVAL 7 DAY)')
+		->andWhere('d.active = 1');
+	
+		$events = $q->execute(array($this->dateend, $this->dateend), Doctrine_Core::HYDRATE_ARRAY);
+	
+		return $events;
+	}
+	
+	/**
+	 * Returns Zeitgeist's newcomers.
+	 *
+	 * @return array
+	 */
+	public function getUsers()
+	{
+		$q = Doctrine_Query::create()
+		->select('u.userid, u.name')
+		->from('LUM_User u')
+		->where('u.datefirstvisit >= ?')
+		->andWhere('u.datefirstvisit <= ?');
+	
+		$users = $q->execute(array($this->datestart, $this->dateend), Doctrine_Core::HYDRATE_ARRAY);
+	
+		return $users;
+	}
 }

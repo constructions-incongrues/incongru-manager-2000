@@ -533,6 +533,15 @@ LUM_Discussion:
       default: '0'
       notnull: true
       autoincrement: false
+  relations:
+    LUM_Releases:
+      local: discussionid
+      foreign: discussionid
+      type: one
+    LUM_Event:
+      local: discussionid
+      foreign: discussionid
+      type: one
 LUM_DiscussionHasTags:
   connection: doctrine
   tableName: LUM_DiscussionHasTags

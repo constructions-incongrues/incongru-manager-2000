@@ -1,0 +1,1 @@
+<?php echo count($lum_zeitgeist->getMixes()) ?>
