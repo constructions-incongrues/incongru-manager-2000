@@ -7,3 +7,9 @@
 [submodule "src/plugins/sfTwitterBootstrapPlugin"]
 	path = src/plugins/sfTwitterBootstrapPlugin
 	url = https://github.com/real-chocopanda/sfTwitterBootstrapPlugin.git
+[submodule "opt/ananas-build-toolkit"]
+	path = opt/ananas-build-toolkit
+	url = git@github.com:contructions-incongrues/ananas-build-toolkit.git
+[submodule "var/liquibase.musiques-incongrues.net"]
+	path = var/liquibase.musiques-incongrues.net
+	url = git@github.com:contructions-incongrues/liquibase.musiques-incongrues.net.git
