@@ -30,8 +30,12 @@ generator:
         display:
           'Période couverte': [datestart, dateend]
           'Textes': [description]
+          'Images': [image, _image_preview]
           'Nouveautés': [_newstuff]
-          'À venir': []
+          'À venir (J+7)': [_upcoming]
+          'Publication': [ispublished]
       new:
         title: "Créer un Zeitgeist"
+        display:
+          'Période couverte': [datestart, dateend]
 

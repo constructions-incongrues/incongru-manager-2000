@@ -1,4 +1,5 @@
 <?php
+// TODO : this should go in a component's controller
 $mixes = $form->getObject()->getMixes();
 $releases = $form->getObject()->getReleases();
 $users = $form->getObject()->getUsers();
@@ -11,7 +12,11 @@ $users = $form->getObject()->getUsers();
 		<div class="input">
 			<ul>
 	<?php foreach ($mixes as $mix): ?>
-				<li><?php echo utf8_decode($mix['name']) ?> (<a href="http://www.musiques-incongrues.net/forum/discussion/<?php echo $mix['discussionid']?>">discussion</a> / <a href="<?php echo $mix['downloadlink']?>">download</a>)</li>	
+				<li>
+					[<a href="http://www.musiques-incongrues.net/forum/discussion/<?php echo $mix['discussionid']?>">view</a>]
+					[<a href="http://www.musiques-incongrues.net/forum/post/<?php echo $mix['firstcommentid']?>">edit</a>]
+					<?php echo utf8_decode($mix['name']) ?>
+				</li>	
 	<?php endforeach; ?>
 			</ul>
 		</div>
@@ -26,7 +31,11 @@ $users = $form->getObject()->getUsers();
 		<div class="input">
 			<ul>
 			<?php foreach ($releases as $release): ?>
-				<li><?php echo utf8_decode($release['name']) ?> (<a href="http://www.musiques-incongrues.net/forum/discussion/<?php echo $release['discussionid']?>">discussion</a> / <a href="<?php echo $release['downloadlink']?>">download</a>)</li>	
+				<li>
+					[<a href="http://www.musiques-incongrues.net/forum/discussion/<?php echo $release['discussionid']?>">view</a>]
+					[<a href="http://www.musiques-incongrues.net/forum/post/<?php echo $release['firstcommentid']?>">edit</a>]
+					<?php echo utf8_decode($release['name']) ?>
+				</li>	
 			<?php endforeach; ?>
 			</ul>
 		</div>

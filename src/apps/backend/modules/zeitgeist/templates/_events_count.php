@@ -1,1 +1,1 @@
-<?php echo count($lum_zeitgeist->getNextWeekEvents()) ?>
+<?php echo count($lum_zeitgeist->getUpcomingEvents(7)) ?>
