@@ -20,7 +20,7 @@ class LUM_Zeitgeist extends BaseLUM_Zeitgeist
 	public function getMixes()
 	{
 		$q = Doctrine_Query::create()
-			->select('d.discussionid, d.name, r.labelname, r.downloadlink')
+			->select('d.discussionid, d.name, d.firstcommentid, r.labelname, r.downloadlink')
 			->from('LUM_Discussion d')
 			->innerJoin('d.LUM_Releases r')
 			->where('d.datecreated >= ?')
@@ -41,7 +41,7 @@ class LUM_Zeitgeist extends BaseLUM_Zeitgeist
 	public function getReleases()
 	{
 		$q = Doctrine_Query::create()
-		->select('d.discussionid, d.name, r.labelname, r.downloadlink')
+		->select('d.discussionid, d.name, d.firstcommentid, r.labelname, r.downloadlink')
 		->from('LUM_Discussion d')
 		->innerJoin('d.LUM_Releases r')
 		->where('d.datecreated >= ?')
@@ -59,17 +59,18 @@ class LUM_Zeitgeist extends BaseLUM_Zeitgeist
  	 *
   	 * @return array
 	 */
-	public function getNextWeekEvents()
+	public function getUpcomingEvents($daysInterval = 7)
 	{
 		$q = Doctrine_Query::create()
-		->select('d.discussionid, d.name, e.date, e.city, e.country')
+		->select('d.discussionid, d.name, d.firstcommentid, e.date, e.city, e.country')
 		->from('LUM_Discussion d')
 		->innerJoin('d.LUM_Event e')
 		->where('e.date >= ?')
-		->andWhere('e.date <= DATE_ADD(?, INTERVAL 7 DAY)')
-		->andWhere('d.active = 1');
+		->andWhere('e.date <= DATE_ADD(?, INTERVAL ? DAY)')
+		->andWhere('d.active = 1')
+		->orderBy('e.date asc');
 	
-		$events = $q->execute(array($this->dateend, $this->dateend), Doctrine_Core::HYDRATE_ARRAY);
+		$events = $q->execute(array($this->dateend, $this->dateend, $daysInterval), Doctrine_Core::HYDRATE_ARRAY);
 	
 		return $events;
 	}
