@@ -12,10 +12,5 @@ class LUM_ZeitgeistForm extends BaseLUM_ZeitgeistForm
 {
   public function configure()
   {
-	// Widgets
-	$this->widgetSchema['image'] = new sfWidgetFormInputText();
-
-	// Validators
-	$this->validatorSchema['image'] = new sfValidatorUrl();
   }
 }
