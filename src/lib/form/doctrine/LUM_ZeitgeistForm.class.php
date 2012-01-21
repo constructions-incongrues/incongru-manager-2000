@@ -12,5 +12,8 @@ class LUM_ZeitgeistForm extends BaseLUM_ZeitgeistForm
 {
   public function configure()
   {
+  	$widgetTextArea = new sfWidgetFormTextarea(array(), array('rows' => 8, 'cols' => 60, 'style' => 'width:70%'));
+  	$this->setWidget('ananasexmachina', $widgetTextArea);
+  	$this->setWidget('description', $widgetTextArea);
   }
 }

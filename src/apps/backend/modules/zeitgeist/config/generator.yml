@@ -14,12 +14,13 @@ generator:
     config:
       actions: ~
       fields:
-        dateend:     {label: "Date de fin", help: "Jour clôturant la période couverte par le numéro"}
-        datestart:   {label: "Date de début", help: "Jour débutant la période couverte par le numéro"}
-        description: {label: "Présentation du numéro", help: "Éventuel texte de présentation du numéro"}
-        image:       {label: "L'image de la semaine", help: "URL vers l'image de la semaine"}
-        ispublished: {label: "Publié ?", help: "L'épisode est-il visible en ligne ?"}
-        zeitgeistid: {label: "Numéro", help: "Numéro de l'épisode"}
+        dateend:         {label: "Date de fin", help: "Jour clôturant la période couverte par le numéro"}
+        datestart:       {label: "Date de début", help: "Jour débutant la période couverte par le numéro"}
+        description:     {label: "Présentation du numéro", help: "Éventuel texte de présentation du numéro"}
+        ananasexmachina: {label: "Ananas Ex Machina", help: "Le compte-rendu d'activité des Bureaux Incongrus'"}
+        image:           {label: "L'image de la semaine", help: "URL vers l'image de la semaine"}
+        ispublished:     {label: "Publié ?", help: "L'épisode est-il visible en ligne ?"}
+        zeitgeistid:     {label: "Numéro", help: "Numéro de l'épisode"}
       list:
         title: Les Zeitgeists
         display: [=zeitgeistid, ispublished, datestart, dateend, _mixes_count, _releases_count, _events_count, _users_count]
@@ -29,7 +30,7 @@ generator:
         title: "Modifier le Zeitgeist #%%zeitgeistid%%"
         display:
           'Période couverte': [datestart, dateend]
-          'Textes': [description]
+          'Textes': [description, ananasexmachina]
           'Images': [image, _image_preview]
           'Nouveautés': [_newstuff]
           'À venir (J+7)': [_upcoming]
