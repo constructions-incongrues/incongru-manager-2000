@@ -13,3 +13,6 @@
 [submodule "src/plugins/sfDoctrineGuardPlugin"]
 	path = src/plugins/sfDoctrineGuardPlugin
 	url = https://github.com/ibolmo/sfDoctrineGuardPlugin.git
+[submodule "src/plugins/ciOrmVanillaPlugin"]
+	path = src/plugins/ciOrmVanillaPlugin
+	url = git@github.com:contructions-incongrues/ciOrmVanillaPlugin.git
