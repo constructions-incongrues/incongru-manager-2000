@@ -24,6 +24,7 @@ generator:
       list:
         title: Les Zeitgeists
         display: [=zeitgeistid, ispublished, datestart, dateend, _mixes_count, _releases_count, _events_count, _users_count]
+        sort: [zeitgeistid, desc]
       filter:  ~
       form:    ~
       edit:

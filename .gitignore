@@ -14,3 +14,7 @@ build
 
 # Profiles that should never be shared
 etc/prod
+
+# Editors temporary files
+*.swp
+*~
