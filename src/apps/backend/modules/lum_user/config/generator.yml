@@ -27,6 +27,6 @@ generator:
         sort: [datefirstvisit, desc]
       filter:  ~
       form:
-        display: [name]
+        display: [name, countvisit, countdiscussions]
       edit:    ~
       new:     ~
