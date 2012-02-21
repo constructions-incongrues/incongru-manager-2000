@@ -1,3 +1,12 @@
+lum_user:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                LUM_User
+    module:               lum_user
+    prefix_path:          /user
+    column:               userid
+    with_wildcard_routes: true
+
 lum_zeitgeist:
   class: sfDoctrineRouteCollection
   options:
@@ -14,4 +23,3 @@ lum_zeitgeist:
 homepage:
   url:   /
   param: { module: sfTwitterBootstrap, action: dashboard }
-

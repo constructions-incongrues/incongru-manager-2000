@@ -8,9 +8,13 @@ all:
     site:                   "Incongru Manager 2000"
     top_link_to_fieldset:   true
     default_image:          light-bulb.png
-    
+
     # Menu items
-    items:
-      Zeitgeists:
-        url: lum_zeitgeist
-      
+    categories:
+      Gestion:
+        items:
+          Zeitgeists:
+            url: lum_zeitgeist
+          Utilisateurs:
+            url: lum_user
+ 

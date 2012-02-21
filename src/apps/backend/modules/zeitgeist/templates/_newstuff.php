@@ -50,7 +50,11 @@ $users = $form->getObject()->getUsers();
 		<div class="input">
 			<ul>
 		<?php foreach ($users as $user): ?>
-				<li><a href="http://www.musiques-incongrues.net/forum/account/<?php echo $user['userid']?>"><?php echo utf8_decode($user['name']) ?></a></li>	
+				<li>
+					[<a href="http://www.musiques-incongrues.net/forum/account/<?php echo $user['userid']?>" target="_blank">view</a>]
+					[<a href="<?php echo url_for('@lum_user_edit?userid='.$user['userid']) ?>" target="_blank">delete</a>]
+					<?php echo utf8_decode($user['name']) ?>
+				</li>
 		<?php endforeach; ?>
 			</ul>
 		</div>

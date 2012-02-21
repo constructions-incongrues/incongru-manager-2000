@@ -1,0 +1,32 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           LUM_User
+    theme:                 twitter
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          lum_user
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        userid:           {label: "Identifiant", help: "L'identifiant de l'utilisateur"}
+        name:             {label: "Pseudonyme", help: "Le pseudonyme de l'utilisateur"}
+        countvisit:       {label: "Nombre de visites", help: "Le nombre de visites de l'utilisateur depuis la création de son compte"}
+        countdiscussions: {label: "Nombre de discussions", help: "Le nombre de discussions initiées par l'utilisateur"}
+        countcomments:    {label: "Nombre de commentaires", help: "Le nombre de commentaires créés par l'utilisateur"}
+        datefirstvisit:   {label: "Date de la première connexion"}
+        datelastactive:    {label: "Date de la dernière connexion"}
+      list:
+        title: "Les Utilisateurs"
+        display: [=userid, name, datefirstvisit, datelastactive, countvisit, countdiscussions, countcomments]
+        sort: [datefirstvisit, desc]
+      filter:  ~
+      form:
+        display: [name]
+      edit:    ~
+      new:     ~
