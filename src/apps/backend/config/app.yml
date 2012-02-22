@@ -8,6 +8,7 @@ all:
     site:                   "Incongru Manager 2000"
     top_link_to_fieldset:   true
     default_image:          light-bulb.png
+    resize_mode:            html
 
     # Menu items
     categories:
@@ -15,6 +16,8 @@ all:
         items:
           Zeitgeists:
             url: lum_zeitgeist
+            image: /images/dashboard_zeitgeist.png
           Utilisateurs:
             url: lum_user
+            image: /images/dashboard_users.gif
  
