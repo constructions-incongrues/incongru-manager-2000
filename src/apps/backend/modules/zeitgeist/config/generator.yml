@@ -35,6 +35,7 @@ generator:
           'Images': [image, _image_preview]
           'Nouveautés': [_newstuff]
           'À venir (J+7)': [_upcoming]
+          'Explorer': [_data]
           'Prévisualiser': [_preview]
           'Publication': [ispublished]
       new:
